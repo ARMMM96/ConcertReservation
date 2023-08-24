@@ -10,9 +10,15 @@ const organizerSchema = mongoose.Schema({
     password: User.schema.paths.password,
     phoneNumber: User.schema.paths.phoneNumber,
     role: User.schema.paths.role,
-    concerts: [],
-    reate: [],
-    complaints:[{
+    concerts: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Concert',
+    }],
+    reates: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Rates',
+    }],
+    complaints: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Role',
     }]
