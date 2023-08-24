@@ -11,7 +11,11 @@ const organizerSchema = mongoose.Schema({
     phoneNumber: User.schema.paths.phoneNumber,
     role: User.schema.paths.role,
     concerts: [],
-    reate: []
+    reate: [],
+    complaints:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Role',
+    }]
 
 
 });
