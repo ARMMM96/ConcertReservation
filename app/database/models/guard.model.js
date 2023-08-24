@@ -14,13 +14,15 @@ const organizerSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Concert',
     }],
-    reates: [{
+
+
+    rates: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Rates',
+        ref: 'Rate',
     }],
     complaints: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Role',
+        ref: 'Complaint',
     }]
 
 
