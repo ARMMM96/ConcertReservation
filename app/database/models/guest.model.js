@@ -6,13 +6,24 @@ const guestSchema = mongoose.Schema({
     firstName: User.schema.paths.firstName,
     lastName: User.schema.paths.lastName,
     email: User.schema.paths.email,
-    disability: User.schema.paths.disability,
-    disabilityDetails: User.schema.paths.disabilityDetails,
     image: User.schema.paths.image,
     password: User.schema.paths.password,
     phoneNumber: User.schema.paths.phoneNumber,
     role: User.schema.paths.role,
 
+
+    disability: {
+        type: Boolean,
+        default: false,
+        required: true
+    },
+    disabilityDetails: {
+        type: String,
+        default: nul,
+        required: function () {
+            return this.disability;
+        },
+    },
     reservations: [
 
     ],

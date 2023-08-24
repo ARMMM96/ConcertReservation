@@ -32,18 +32,6 @@ const userSchema = mongoose.Schema({
             }
         }
     },
-    disability: {
-        type: Boolean,
-        default: false,
-        required: true
-    },
-    disabilityDetails: {
-        type: String,
-        default: nul,
-        required: function () {
-            return this.disability;
-        },
-    },
     image: {
         type: String,
         trim: true
