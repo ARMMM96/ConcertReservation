@@ -33,7 +33,7 @@ class User {
     static getSingleUser = async (req, res) => {
         const id = req.params.id;
         try {
-            const userData = await userModel.findById(id).populate('role').populate('company');
+            const userData = await userModel.findById(id).populate('role');
             if (!userData) {
                 helper.responseHandler(res, 404, false, null, "User Is not exist")
 
@@ -48,7 +48,7 @@ class User {
     }
     static getAllUsers = async (req, res) => {
         try {
-            const usersData = await userModel.find().populate('role').populate('company');
+            const usersData = await userModel.find().populate('role');
             if (!usersData || usersData.length == 0) {
                 helper.responseHandler(res, 404, false, null, "Users Is not exist")
 
