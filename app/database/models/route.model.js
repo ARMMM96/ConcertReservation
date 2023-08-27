@@ -17,4 +17,3 @@ routeSchema.virtual('roleTitles', {
 const Route = mongoose.model("Route", routeSchema);
 
 module.exports = Route;
-ص
