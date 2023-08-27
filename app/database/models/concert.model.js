@@ -8,6 +8,10 @@ const concertSchema = new mongoose.Schema({
     details: {
         type: String,
     },
+    image: {
+        type: String,
+        trim: true
+    },
     artists: [],
     gards: [{
         type: mongoose.Schema.Types.ObjectId,
