@@ -62,8 +62,57 @@ const userSchema = mongoose.Schema({
     role: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Role',
+
+    },
+
+    positon: {
+        type: String,
+        trim: true,
+        lowercase: true,
+        minLength: 3,
+        maxLength: 20,
+        required: false
+    },
+
+    reates: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Rates',
+    }],
+    concerts: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Concert',
+    }],
+
+    rates: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Rate',
+    }],
+    complaints: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Complaint',
+    }],
+
+    disability: {
+        type: Boolean,
+        default: false,
         required: true
-    }
+    },
+    disabilityDetails: {
+        type: String,
+        default: null,
+        required: function () {
+            return this.disability;
+        },
+    },
+    reservations: [
+
+    ],
+    attitude: [
+
+    ],
+
+
+
 })
 
 // Encrypt password
