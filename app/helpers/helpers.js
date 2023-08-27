@@ -1,4 +1,6 @@
 
+const qrcode = require('qrcode');
+
 class Herlper {
     static responseHandler = (res, statusCode, apiStatus, data, message) => {
         res.status(statusCode).send({
@@ -20,6 +22,16 @@ class Herlper {
             day = '0' + day;
 
         return [day, month, year].join('-');
+    }
+
+    static generateQRCode = async (ticketId) => {
+        const qrcode = await new QRCode({
+            text: ticketId,
+            width: 200,
+            height: 200
+        }).toDataURL();
+
+        return qrcode;
     }
 }
 module.exports = Herlper
