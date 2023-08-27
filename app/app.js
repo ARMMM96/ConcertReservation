@@ -18,6 +18,7 @@ const urlsRoutes = require('./routes/routes.routes')
 const rolesRoutes = require('./routes/roles.routes')
 const concertsRoutes = require('./routes/concerts.routes')
 const complaintRoutes = require('./routes/complaint.routes')
+const rateRoutes = require('./routes/rates.routes')
 
 
 
@@ -27,6 +28,7 @@ app.use("/api/routes/", urlsRoutes)
 app.use("/api/roles/", rolesRoutes)
 app.use("/api/concerts/", concertsRoutes)
 app.use("/api/complaints/", complaintRoutes)
+app.use("/api/rates/", rateRoutes)
 
 app.all("*", (req, res) => {
     res.status(404).send({
