@@ -54,7 +54,6 @@ class Route {
 
     static singleRoute = async (req, res) => {
         try {
-            // const findRouteById = await routesModel.findOne({id: req.params.id})
             const findRouteById = await routesModel.findById(req.params.id).populate('roles');
             if (!findRouteById) {
                 helper.responseHandler(res, 404, false, findRouteById, "Route Is not exist")
