@@ -14,7 +14,7 @@ class Role {
     static getRoles = async (req, res) => {
         try {
             const rolesData = await rolesModel.find();
-            if (!rolesData) {
+            if (rolesData.length <= 0) {
                 helper.responseHandler(res, 404, false, null, "Role Is not exist")
             } else {
 
