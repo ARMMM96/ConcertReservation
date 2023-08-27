@@ -16,6 +16,7 @@ app.use(express.json())
 const userRoutes = require('./routes/user.routes')
 const urlsRoutes = require('./routes/routes.routes')
 const rolesRoutes = require('./routes/roles.routes')
+const concertsRoutes = require('./routes/concerts.routes')
 
 
 
@@ -23,6 +24,7 @@ const rolesRoutes = require('./routes/roles.routes')
 app.use("/api/user/", userRoutes)
 app.use("/api/routes/", urlsRoutes)
 app.use("/api/roles/", rolesRoutes)
+app.use("/api/concerts/", concertsRoutes)
 
 app.all("*", (req, res) => {
     res.status(404).send({
