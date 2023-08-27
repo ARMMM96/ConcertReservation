@@ -14,12 +14,13 @@ connectDB()
 app.use(express.json())
 
 const userRoutes = require('./routes/user.routes')
+const urlsRoutes = require('./routes/routes.routes')
 
 
 
 
 app.use("/api/user/", userRoutes)
-
+app.use("/api/routes/", urlsRoutes)
 
 app.all("*", (req, res) => {
     res.status(404).send({
