@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const Routes = require("../controller/routes.controller")
+const Routes = require("../controllers/routes.controller")
 
 
 router.post("/create", Routes.create)
