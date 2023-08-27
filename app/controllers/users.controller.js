@@ -116,27 +116,6 @@ class User {
     }
 
 
-    static async getCompanyUsers(req, res) {
-
-        const companyId = req.params.id;
-        try {
-            const userData = await userModel.find(
-                {
-                    "companyId": companyId
-                }
-            );
-            if (!userData) {
-                helper.responseHandler(res, 404, false, null, "Compan users User Is not exist")
-
-            } else {
-
-                helper.responseHandler(res, 200, true, userData, "User found")
-            }
-        }
-        catch (e) {
-            helper.responseHandler(res, 500, false, e, e.message)
-        }
-    }
 
     static async changePassword(req, res) {
         try {
