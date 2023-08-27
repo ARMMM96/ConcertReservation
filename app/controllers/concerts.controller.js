@@ -70,7 +70,7 @@ class Concert {
 
     static getConcerts = async (req, res) => {
         try {
-            const concertsData = await concertModel.find().populate('roles');
+            const concertsData = await concertModel.find();
             if (concertsData.length <= 0) {
 
                 helper.responseHandler(res, 404, false, concertsData.length, "No Concerts created Yet")
