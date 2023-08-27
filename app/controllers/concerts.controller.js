@@ -55,8 +55,7 @@ class Concert {
 
     static singleConcert = async (req, res) => {
         try {
-            // const findRouteById = await routesModel.findOne({id: req.params.id})
-            const findConcertById = await concertModel.findById(req.params.id).populate('roles');
+            const findConcertById = await concertModel.findById(req.params.id)
             if (!findConcertById) {
                 helper.responseHandler(res, 404, false, findConcertById, "Concert Is not exist")
             } else {
