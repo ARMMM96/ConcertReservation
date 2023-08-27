@@ -13,6 +13,11 @@ const complaintSchema = new mongoose.Schema({
         ref: "user",
         required: true,
     },
+    complaintCreator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user",
+        required: true,
+    }
 });
 
 const Complaint = mongoose.model("Complaint", complaintSchema);
