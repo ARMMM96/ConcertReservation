@@ -26,6 +26,12 @@ npm install
 ```
 
 ## Usage
+Before starting your server you need to create your .env file or your environment variables like this example:
+```sh
+PORT=3000
+DBURL=mongodb://127.0.0.1:27017/ConcertReservation
+tokenPassword=Concert-Reservation-TokenPassowrd
+```
 
 ```sh
 npm --watch index.js
